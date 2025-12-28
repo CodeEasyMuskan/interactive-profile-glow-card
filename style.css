@@ -1,0 +1,135 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0b0f1a;
+  font-family:Arial, sans-serif;
+}
+
+.card{
+  width:320px;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter: blur(15px);
+  color:#fff;
+  position:relative;
+  transition:0.3s ease;
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  --x:50%;
+  --y:50%;
+  animation: idleGlow 4s infinite alternate;
+}
+
+.card:hover{
+  transform: translateY(-12px) scale(1.02);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  background:
+    radial-gradient(
+      200px circle at var(--x) var(--y),
+      rgba(0,255,255,0.4),
+      transparent 65%
+    );
+  opacity:0;
+  transition:0.25s;
+}
+
+.card:hover::before{
+  opacity:1;
+}
+
+/* ===== PROFILE ===== */
+.profile{
+  text-align:center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.profile img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid cyan;
+  box-shadow:0 0 25px cyan;
+}
+
+.profile h2{
+  margin:12px 0 4px;
+}
+
+.profile p{
+  margin:0;
+  font-size:14px;
+  opacity:0.8;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+}
+
+.skills span{
+  padding:6px 14px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.1);
+  font-size:13px;
+  opacity:0;
+  transform:translateY(15px);
+  animation: skillIn 0.6s ease forwards;
+}
+
+.skills span:nth-child(1){animation-delay:.2s}
+.skills span:nth-child(2){animation-delay:.35s}
+.skills span:nth-child(3){animation-delay:.5s}
+.skills span:nth-child(4){animation-delay:.65s}
+.skills span:nth-child(5){animation-delay:.8s}
+
+.skills span:hover{
+  background:cyan;
+  color:#000;
+  box-shadow:0 0 18px cyan;
+  transform:scale(1.1);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes skillIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes idleGlow{
+  from{
+    box-shadow:0 0 30px rgba(0,255,255,0.2);
+  }
+  to{
+    box-shadow:0 0 55px rgba(2, 73, 73, 0.45);
+  }
+}
