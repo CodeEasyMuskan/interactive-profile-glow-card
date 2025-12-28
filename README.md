@@ -20,12 +20,5 @@ A modern animated profile / skill card that reacts to mouse movement and creates
 - Resume project
 - UI animation practice
 
-## 🚀 Live Demo
-👉 https://YOUR_USERNAME.github.io/cursor-reactive-glow-card/
-
-## 📸 Preview
-(Add screenshot here)
-
----
 
 Made with ❤️ by Muskan
